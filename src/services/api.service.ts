@@ -3,10 +3,7 @@ import BaseRequestModel from '../utils/base-request.model';
 import { Body } from '../utils/types';
 
 class ApiService {
-    private route: string;
-    private form: Body;
-
-    constructor(route: string, form?: Body) {
+    constructor(private route: string, private form?: Body) {
         this.route = route;
         this.form = form;
     }
