@@ -12,7 +12,7 @@ class ApiService {
     }
 
     //get request
-    public get(): Observable<any> {
+    get(): Observable<any> {
         const headers = {
             'Access-Control-Allow-Origin': '*'
         };
@@ -20,7 +20,7 @@ class ApiService {
         return newBase.request();
     }
     // post request
-    public post(): Observable<any> {
+    post(): Observable<any> {
         const headers = {
             'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json'

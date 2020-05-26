@@ -2,20 +2,8 @@ import { Observable } from "rxjs";
 import { Method, _Headers, Body } from "./types";
 
 const baseUrl = 'http://dummy.restapiexample.com/api/v1';
-interface Props {
-    url: string;
-    method?: Method;
-    headers: _Headers,
-    body?: Body
-}
-
-export default class BaseRequestModel implements Props {
-    url: string;
-    method: Method;
-    headers: _Headers;
-    body: Body;
-
-    constructor(url: string, method: Method, headers: _Headers, body?: Body) {
+export default class BaseRequestModel {
+    constructor(private url: string, private method: Method, private headers: _Headers, private body?: Body) {
         this.url = url;
         this.method = method || "GET";
         this.headers = headers || {};
