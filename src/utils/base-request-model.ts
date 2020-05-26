@@ -26,6 +26,9 @@ export default class BaseRequestModel {
                 }).catch((e: any) => {
                     observer.error(e);
                 })
+            return () => {
+                // clean up
+            }
         });
     }
 }
