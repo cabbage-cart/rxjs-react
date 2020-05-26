@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
-import { Method, _Headers, Body } from "./types";
+import { Method, Headers$, Body } from "./types";
 
 const baseUrl = 'http://dummy.restapiexample.com/api/v1';
 export default class BaseRequestModel {
-    constructor(private url: string, private method: Method, private headers: _Headers, private body?: Body) {
+    constructor(private url: string, private method: Method, private headers: Headers$, private body?: Body) {
         this.url = url;
         this.method = method || "GET";
         this.headers = headers || {};
