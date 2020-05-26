@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import BaseRequestModel from '../utils/base-request-model';
+import BaseRequestModel from '../utils/base-request.model';
 import { Body } from '../utils/types';
 
 class ApiService {
@@ -28,7 +28,7 @@ class ApiService {
         const newBase = new BaseRequestModel(this.route, 'POST', headers, this.form)
         return newBase.request();
     }
-
+    // add more PUSH, PUT, etc
 }
 
 export default ApiService;

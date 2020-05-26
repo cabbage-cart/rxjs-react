@@ -27,7 +27,7 @@ export default class BaseRequestModel {
                     observer.error(e);
                 })
             return () => {
-                // clean up
+                // clean up on unsubscribe
             }
         });
     }
