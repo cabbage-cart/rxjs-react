@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { take, map } from "rxjs/operators";
 import ApiService from "./services/api.service";
+import { Body } from "./utils/types";
 
 interface Employee {
   id: string;
@@ -15,15 +16,17 @@ const App = () => {
 
   const addEmployee = (event: React.MouseEvent) => {
     event.preventDefault();
-    const _employee: any = {
+    const employee: Employee = {
       id: "9001",
       employee_age: "25",
       employee_salary: "9001",
       employee_name: "Ben Solo",
     };
-    new ApiService("/create", _employee).post().subscribe((r) => {
-      setEmployees([_employee, ...employees]);
-    });
+    new ApiService("/create", (employee as unknown) as Body)
+      .post()
+      .subscribe((r) => {
+        setEmployees([employee, ...employees]);
+      });
   };
 
   useEffect(() => {
